@@ -3,8 +3,8 @@ import { database, Query } from "@/libs/AppWriteClient"
 const useGetPostsByUser = async (userId: string) => {
     try {
         const response = await database.listDocuments(
-            String(process.env.NEXT_PUBLIC_DATABASE_ID), 
-            String(process.env.NEXT_PUBLIC_COLLECTION_ID_POST), 
+            '67765a9e001b730b0f67', 
+            String(process.env.), 
             [ 
                 Query.equal('user_id', userId),
                 Query.orderDesc("$id")

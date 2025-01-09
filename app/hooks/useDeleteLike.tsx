@@ -3,8 +3,8 @@ import { database } from "@/libs/AppWriteClient"
 const useDeleteLike = async (id: string) => {
     try {
         await database.deleteDocument(
-            String(process.env.NEXT_PUBLIC_DATABASE_ID), 
-            String(process.env.NEXT_PUBLIC_COLLECTION_ID_LIKE), 
+            '67765a9e001b730b0f67', 
+           '67766232001f346ea283', 
             id
         );
     } catch (error) {

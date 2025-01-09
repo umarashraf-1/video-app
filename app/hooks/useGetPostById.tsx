@@ -4,8 +4,8 @@ import useGetProfileByUserId from "./useGetProfileByUserId";
 const useGetPostById = async (id: string) => {
     try {
         const post = await database.getDocument(
-            String(process.env.NEXT_PUBLIC_DATABASE_ID), 
-            String(process.env.NEXT_PUBLIC_COLLECTION_ID_POST), 
+            '67765a9e001b730b0f67', 
+            '677662e4001d370a1b23', 
             id
         );
 

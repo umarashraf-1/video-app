@@ -3,8 +3,8 @@ import { database, Query } from "@/libs/AppWriteClient"
 const useGetLikesByPostId = async (postId: string) => {
     try {
         const response = await database.listDocuments(
-            String(process.env.NEXT_PUBLIC_DATABASE_ID), 
-            String(process.env.NEXT_PUBLIC_COLLECTION_ID_LIKE), 
+            '67765a9e001b730b0f67', 
+            '67766232001f346ea283', 
             [ 
                 Query.equal('post_id', postId) 
             ]

@@ -1,8 +1,8 @@
 const useCreateBucketUrl = (fileId: string) => {
 
-    const url = process.env.NEXT_PUBLIC_APPWRITE_URL
-    const id = process.env.NEXT_PUBLIC_BUCKET_ID
-    const endpoint = process.env.NEXT_PUBLIC_ENDPOINT
+    const url = 'https://cloud.appwrite.io/v1'
+    const id = '677664fe001528bae1c5'
+    const endpoint = '67761c44000116415a75'
 
     if (!url || !id || !endpoint || !fileId) return ''
 
