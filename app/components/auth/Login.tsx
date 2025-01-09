@@ -5,6 +5,7 @@ import { useUser } from "@/app/context/user";
 import { useGeneralStore } from "@/app/stores/general";
 import { BiLoaderCircle } from "react-icons/bi";
 
+
 export default function Login() {
     let { setIsLoginOpen } = useGeneralStore();
 
@@ -55,7 +56,6 @@ export default function Login() {
 
     return (
         <>
-
             <div>
                 <h1 className="text-center text-[28px] mb-4 font-bold">Log in</h1>
 
