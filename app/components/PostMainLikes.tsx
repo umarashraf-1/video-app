@@ -15,7 +15,7 @@ import useDeleteLike from "../hooks/useDeleteLike"
 export default function PostMainLikes({ post }: PostMainLikesCompTypes) {
     const [isCopied, setIsCopied] = useState(false);
 
-    const baseUrl = 'https://orange-forest-0ff05fd10.4.azurestaticapps.net/'
+    const baseUrl = 'https://orange-forest-0ff05fd10.4.azurestaticapps.net'
 
 
 const handleShare = async () => {
