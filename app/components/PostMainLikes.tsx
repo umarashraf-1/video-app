@@ -15,7 +15,7 @@ import useDeleteLike from "../hooks/useDeleteLike"
 export default function PostMainLikes({ post }: PostMainLikesCompTypes) {
     const [isCopied, setIsCopied] = useState(false);
 
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
+    const baseUrl = 'https://video-app-phi-five.vercel.app'
 
 
 const handleShare = async () => {
