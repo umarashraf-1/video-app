@@ -55,11 +55,6 @@ export default function Login() {
 
     return (
         <>
-         {loading && (
-        <div>
-          <img style={{ width: "150px" }} src="/image/loader.gif" />
-        </div>
-      )}
             <div>
                 <h1 className="text-center text-[28px] mb-4 font-bold">Log in</h1>
 
