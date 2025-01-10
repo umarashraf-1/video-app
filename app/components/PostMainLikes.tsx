@@ -1,5 +1,5 @@
 import { AiFillHeart } from "react-icons/ai"
-import { FaShare, FaCommentDots, FaDownload } from "react-icons/fa"
+import { FaShare, FaCommentDots } from "react-icons/fa"
 import { useEffect, useState } from "react"
 import { useUser } from "../context/user"
 import { BiLoaderCircle } from "react-icons/bi"

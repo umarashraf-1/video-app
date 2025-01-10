@@ -1,6 +1,6 @@
 export interface UserContextTypes {
     user: User | null;
-    register: (name: string, email: string, password: string) => Promise<void>;
+    register: (name: string, email: string, password: string, role: string,) => Promise<void>;
     login: (email: string, password: string) => Promise<void>;
     logout: () => Promise<void>;
     checkUser: () => Promise<void>;
@@ -11,6 +11,7 @@ export interface User {
     name: string,
     bio: string,
     image: string,
+    role: string,
 }
 
 export interface Profile {
@@ -19,6 +20,7 @@ export interface Profile {
     name: string;
     image: string;
     bio: string;
+    role: string,
 }
 
 export interface RandomUsers {
@@ -35,6 +37,12 @@ export interface CropperDimensions {
 }
 
 export interface Like {
+    id: string;
+    user_id: string;
+    post_id: string;
+  }
+
+  export interface Rate {
     id: string;
     user_id: string;
     post_id: string;

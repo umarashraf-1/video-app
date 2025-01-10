@@ -21,7 +21,7 @@ export const useLikeStore = create<LikeStore>()(
             }),
             { 
                 name: 'store', 
-                storage: createJSONStorage(() => localStorage) 
+                storage: createJSONStorage(() => localStorage)
             }
         )
     )

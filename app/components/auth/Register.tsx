@@ -14,6 +14,7 @@ export default function Register() {
 
     const [loading, setLoading] = useState<boolean>(false);
     const [name, setName] = useState<string | ''>('');
+    const [role, setRole] = useState<string | ''>('');
     const [email, setEmail] = useState<string | ''>('');
     const [password, setPassword] = useState<string | ''>('');
     const [confirmPassword, setConfirmPassword] = useState<string | ''>('');
@@ -52,6 +53,9 @@ export default function Register() {
         } else if (password != confirmPassword) {
             setError({ type: 'password', message: 'The Passwords do not match'})
             isError = true
+        } else if (!role) {
+            setError({ type: 'role', message: 'A Role is required'})
+            isError = true
         }
         return isError
     }
@@ -63,7 +67,7 @@ export default function Register() {
 
         try {
             setLoading(true)
-            await contextUser.register(name, email, password)
+            await contextUser.register(name, email, password, role)
             setLoading(false)
             setIsLoginOpen(false)
             router.refresh()
@@ -78,16 +82,10 @@ export default function Register() {
 
         console.log("REgistering")
     }
-
     return (
         <>
-           {loading && (
-        <div>
-          <img style={{ width: "150px" }} src="/image/loader.gif" />
-        </div>
-      )}
             <div>
-            {/* {String(contextUser?.user?.name)} */}
+            
                 <h1 className="text-center text-[28px] mb-4 font-bold">Register</h1>
 
                 <div className="px-6 pb-2">
@@ -132,6 +130,29 @@ export default function Register() {
                         inputType="password"
                         error={showError('confirmPassword')}
                     />
+                </div>
+                <div className="px-6 pb-2">
+                <div className="flex items-center">
+                        <input 
+                            type="radio" 
+                            id="creator"
+                            name="role" 
+                            value="creator" 
+                            onChange={(e) => setRole(e.target.value)} 
+                        />
+                        <label htmlFor="creator" className="ml-2">Creator</label>
+                    </div>
+                    <div className="flex items-center mt-2">
+                        <input 
+                            type="radio" 
+                            id="viewer" 
+                            name="role" 
+                            value="viewer"
+                            onChange={(e) => setRole(e.target.value)} 
+                        />
+                        <label htmlFor="viewer" className="ml-2">Viewer</label>
+                    </div>
+                    {showError('role') && <p className="text-red-500 text-sm">{showError('role')}</p>}
                 </div>
 
                 <div className="px-6 pb-2 mt-6">

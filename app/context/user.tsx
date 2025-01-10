@@ -15,6 +15,7 @@ const UserContext = createContext<UserContextTypes | null>(null);
 const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const router = useRouter()
   const [user, setUser] = useState<User | null>(null);
+  
 
   const checkUser = async () => {
     try {
@@ -24,7 +25,7 @@ const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
       const promise = await account.get() as any
       const profile = await useGetProfileByUserId(promise?.$id)
 
-      setUser({ id: promise?.$id, name: promise?.name,  bio: profile?.bio, image: profile?.image });
+      setUser({ id: promise?.$id, name: promise?.name,  bio: profile?.bio, image: profile?.image, role: profile?.role  });
     } catch (error) {
       setUser(null);
     }
@@ -32,13 +33,13 @@ const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 
   useEffect(() => { checkUser() }, []);
 
-  const register = async (name: string, email: string, password: string) => {
+  const register = async (name: string, email: string, password: string, role: string) => {
 
     try {
       const promise = await account.create(ID.unique(), email, password, name)
       await account.createEmailPasswordSession(email, password);
 
-      await useCreateProfile(promise?.$id, name, '67766544000322c13e50', '')
+      await useCreateProfile(promise?.$id, name, '67766544000322c13e50', '', role)
       await checkUser() 
 
     } catch (error) {

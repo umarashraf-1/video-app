@@ -7,6 +7,7 @@ import { ImMusic } from "react-icons/im";
 import { AiFillHeart } from "react-icons/ai";
 import PostMainLikes from "./PostMainLikes";
 import useCreateBucketUrl from "../hooks/useCreateBucketUrl";
+import PostMainRating from "./PostMainRating";
 
 export default function PostMain({ post }: PostMainCompTypes) {
   useEffect(() => {
@@ -85,6 +86,9 @@ export default function PostMain({ post }: PostMainCompTypes) {
 
             <PostMainLikes post={post} />
           </div>
+            <div>
+            <PostMainRating postId={post?.id} />
+            </div>
         </div>
       </div>
     </>
