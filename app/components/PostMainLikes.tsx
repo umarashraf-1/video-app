@@ -146,7 +146,7 @@ const handleShare = async () => {
           URL copied to clipboard!
         </div>
       )}
-                        <span className="text-xs text-gray-800 font-semibold">55</span>
+                        {/* <span className="text-xs text-gray-800 font-semibold">55</span> */}
                     </button>
                 </div>
             </div>
