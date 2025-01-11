@@ -1,6 +1,6 @@
 const useCreateBucketUrl = (fileId: string) => {
 
-    const url = 'http://52.190.3.131/v1'
+    const url = 'http://4.156.75.46/v1'
     const id = '67825af10032d8df32a8'
     const endpoint = '678249c50035144d6cc5'
 
