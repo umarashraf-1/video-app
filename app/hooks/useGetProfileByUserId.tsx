@@ -3,8 +3,8 @@ import { database, Query } from "@/libs/AppWriteClient"
 const useGetProfileByUserId = async (userId: string) => {
     try {
         const response = await database.listDocuments(
-            '67765a9e001b730b0f67', 
-            '67765fb60025afc539e5', 
+            '678254d20021e0f39655', 
+            '6782559c00107a30eb18', 
             [ 
                 Query.equal('user_id', userId) 
             ]

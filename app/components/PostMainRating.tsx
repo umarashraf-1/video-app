@@ -41,8 +41,8 @@ export default function PostMainRating({ postId }: PostMainRatingProps) {
 
     try {
       await database.createDocument(
-        '67765a9e001b730b0f67',
-        '67812d3b00330277c2ae',
+        '678254d20021e0f39655',
+        '67825b8e003b9bf1b728',
         "unique()",
         {
           post_id: postId,

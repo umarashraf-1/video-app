@@ -20,12 +20,12 @@ const useChangeUserImage = async (file: File, cropper: any, currentImage: string
         const arrayBuffer = await blob.arrayBuffer();
         const finalFile = new File([arrayBuffer], file.name, { type: blob.type });
         const result = await storage.createFile
-        ('677664fe001528bae1c5', 
+        ('67825af10032d8df32a8', 
         videoId, finalFile);
 
         // if current image is not default image delete
-        if (currentImage != '67766544000322c13e50') {
-            await storage.deleteFile('677664fe001528bae1c5', currentImage);
+        if (currentImage != '67825b370010af93c501') {
+            await storage.deleteFile('67825af10032d8df32a8', currentImage);
         }
 
         return result?.$id

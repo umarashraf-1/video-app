@@ -13,11 +13,11 @@ const useDeletePostById = async (postId: string, currentImage: string) => {
         comments.forEach(async comment => { await useDeleteComment(comment?.id) })
 
         await database.deleteDocument(
-            '67765a9e001b730b0f67', 
-            '677662e4001d370a1b23', 
+            '678254d20021e0f39655', 
+            '6782596800053fef2ae8', 
             postId
         );
-        await storage.deleteFile('677664fe001528bae1c5', currentImage);
+        await storage.deleteFile('67825af10032d8df32a8', currentImage);
     } catch (error) {
         throw error
     }

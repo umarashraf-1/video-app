@@ -5,8 +5,8 @@ const useCreatePost = async (file: File, userId: string, caption: string) => {
 
     try {
         await database.createDocument(
-            '67765a9e001b730b0f67', 
-            '677662e4001d370a1b23', 
+            '678254d20021e0f39655', 
+            '6782596800053fef2ae8', 
             ID.unique(), 
         {
             user_id: userId,
@@ -14,7 +14,7 @@ const useCreatePost = async (file: File, userId: string, caption: string) => {
             video_url: videoId,
             created_at: new Date().toISOString(),
         });
-        await storage.createFile('677664fe001528bae1c5', videoId, file)
+        await storage.createFile('67825af10032d8df32a8', videoId, file)
     } catch (error) {
         throw error
     }
